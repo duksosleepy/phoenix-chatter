@@ -18,7 +18,7 @@ config :phoenix_chatter, PhoenixChatter.Repo,
 config :phoenix_chatter, PhoenixChatterWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
   secret_key_base: "IVY2W5XjRvEZBByP44i8DWYFtkLgLgim4+ACeEKftE0cjDXkc1+cFwR3FIjpdsNd",
-  server: false
+  server: true
 
 # In test we don't send emails
 config :phoenix_chatter, PhoenixChatter.Mailer, adapter: Swoosh.Adapters.Test
@@ -35,3 +35,7 @@ config :phoenix, :plug_init_mode, :runtime
 # Enable helpful, but potentially expensive runtime checks
 config :phoenix_live_view,
   enable_expensive_runtime_checks: true
+
+config :phoenix_chatter, :sql_sandbox, true
+
+config :wallaby, driver: Wallaby.Chrome
