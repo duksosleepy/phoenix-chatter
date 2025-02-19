@@ -38,8 +38,10 @@ config :phoenix_live_view,
 
 config :phoenix_chatter, :sql_sandbox, true
 
+config :wallaby, screenshot_on_failure: true
+
 config :wallaby,
-  driver: Wallaby.Chrome
+  driver: Wallaby.Selenium
 
 # driver: Wallaby.Selenium,
 # selenium: [

@@ -6,5 +6,5 @@ defmodule PhoenixChatterWeb.PageHTML do
   """
   use PhoenixChatterWeb, :html
 
-  embed_templates "page_html/*"
+  embed_templates "chat_room_html/*"
 end
