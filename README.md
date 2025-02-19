@@ -8,8 +8,13 @@ mix local.hex
 mix archive.install hex phx_new
 ```
 
-# PhoenixChatter
 
+# Testing
+1. For Selenium: Install [Selenium Manager](https://github.com/SeleniumHQ/selenium_manager_artifacts), [Selenium Server](https://github.com/SeleniumHQ/selenium/releases/), [Geckodriver](https://github.com/mozilla/geckodriver/releases)
+
+2. For Chromium: Install Chrome and [Chromedriver](https://googlechromelabs.github.io/chrome-for-testing) ( Working only in linux :D )
+
+# Run project
 To start your Phoenix server:
 
   * Run `mix setup` to install and setup dependencies

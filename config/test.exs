@@ -7,7 +7,7 @@ import Config
 # Run `mix help test` for more information.
 config :phoenix_chatter, PhoenixChatter.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "Hiimduk123",
   hostname: "localhost",
   database: "phoenix_chatter_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
@@ -38,4 +38,20 @@ config :phoenix_live_view,
 
 config :phoenix_chatter, :sql_sandbox, true
 
-config :wallaby, driver: Wallaby.Chrome
+config :wallaby,
+  driver: Wallaby.Chrome
+
+# driver: Wallaby.Selenium,
+# selenium: [
+#   capabilities: %{
+#     browserName: "firefox",
+#     "moz:firefoxOptions": %{
+#       args: ["-headless"]
+#     }
+#   },
+#   remote_url: "http://192.168.22.1:4444/"
+# ]
+# driver:
+#   Wallaby.config(:wallaby,
+#     hackney_options: [timeout: 5_000]
+#   )

@@ -32,6 +32,12 @@ defmodule PhoenixChatterWeb.ConnCase do
   end
 
   setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PhoenixChatter.Repo)
+
+    unless tags[:async] do
+      Ecto.Adapters.SQL.Sandbox.mode(PhoenixChatter.Repo, {:shared, self()})
+    end
+
     PhoenixChatter.DataCase.setup_sandbox(tags)
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end

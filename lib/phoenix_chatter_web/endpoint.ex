@@ -1,8 +1,8 @@
 defmodule PhoenixChatterWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :phoenix_chatter
 
-  if Application.compile_env(:chatter, :sql_sandbox) do
-    plug Phoenix.Ecto.SQL.Sandbox
+  if sandbox = Application.compile_env(:phoenix_chatter, :sql_sandbox) do
+    plug Phoenix.Ecto.SQL.Sandbox, sandbox: sandbox
   end
 
   # The session will be stored in the cookie and signed,
