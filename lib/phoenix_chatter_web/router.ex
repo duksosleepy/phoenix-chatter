@@ -20,6 +20,11 @@ defmodule PhoenixChatterWeb.Router do
     get "/", ChatRoomController, :index
   end
 
+  scope "/rooms" do
+    live "/new", Room.NewLive, :new
+    live "/:slug", Room.ShowLive, :show
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", PhoenixChatterWeb do
   #   pipe_through :api

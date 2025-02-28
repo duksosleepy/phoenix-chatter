@@ -6,7 +6,7 @@ defmodule PhoenixChatter.Organizer do
   import Ecto.Query, warn: false
   alias PhoenixChatter.Repo
 
-  alias PhoenixChatter.Organizer.Room
+  alias PhoenixChatter.Room
 
   @doc """
   Returns the list of rooms.

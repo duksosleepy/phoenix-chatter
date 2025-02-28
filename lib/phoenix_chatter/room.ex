@@ -1,4 +1,4 @@
-defmodule PhoenixChatter.Organizer.Room do
+defmodule PhoenixChatter.Room do
   use Ecto.Schema
   import Ecto.Changeset
 
