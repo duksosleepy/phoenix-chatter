@@ -1,9 +1,8 @@
 // See the Tailwind configuration guide for advanced usage
 // https://tailwindcss.com/docs/configuration
-
 const plugin = require("tailwindcss/plugin");
-const fs = require("fs");
-const path = require("path");
+const fs = require("node:fs");
+const path = require("node:path");
 
 module.exports = {
 	content: [
@@ -43,7 +42,6 @@ module.exports = {
 				".phx-change-loading &",
 			]),
 		),
-
 		// Embeds Heroicons (https://heroicons.com) into your app.css bundle
 		// See your `CoreComponents.icon/1` for more information.
 		//
@@ -56,12 +54,15 @@ module.exports = {
 				["-mini", "/20/solid"],
 				["-micro", "/16/solid"],
 			];
-			icons.forEach(([suffix, dir]) => {
-				fs.readdirSync(path.join(iconsDir, dir)).forEach((file) => {
+
+			for (const [suffix, dir] of icons) {
+				const files = fs.readdirSync(path.join(iconsDir, dir));
+				for (const file of files) {
 					const name = path.basename(file, ".svg") + suffix;
 					values[name] = { name, fullPath: path.join(iconsDir, dir, file) };
-				});
-			});
+				}
+			}
+
 			matchComponents(
 				{
 					hero: ({ name, fullPath }) => {
