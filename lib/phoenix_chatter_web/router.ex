@@ -19,8 +19,8 @@ defmodule PhoenixChatterWeb.Router do
 
     get "/", ChatRoomController, :index
 
-    live "/room/new", Room.NewLive, :new
-    live "/room/:slug", Room.ShowLive, :show
+    live "/room/new", Room.NewLive
+    live "/room/:slug", Room.ShowLive
   end
 
   # Other scopes may use custom stacks.

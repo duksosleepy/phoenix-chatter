@@ -24,6 +24,12 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
+- Note:
+  + If you have error `no route found for POST`, please ensure all package in /assests/ installed and run
+  + `mix assets.setup`
+  + `mix assets.build`
+
+
 ## Learn more
 
   * Official website: https://www.phoenixframework.org/
