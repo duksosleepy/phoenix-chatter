@@ -18,11 +18,9 @@ defmodule PhoenixChatterWeb.Router do
     pipe_through :browser
 
     get "/", ChatRoomController, :index
-  end
 
-  scope "/rooms" do
-    live "/new", Room.NewLive, :new
-    live "/:slug", Room.ShowLive, :show
+    live "/room/new", Room.NewLive, :new
+    live "/room/:slug", Room.ShowLive, :show
   end
 
   # Other scopes may use custom stacks.

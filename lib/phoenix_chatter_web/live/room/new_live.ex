@@ -37,7 +37,7 @@ defmodule PhoenixChatterWeb.Room.NewLive do
       {:ok, room} ->
         {:noreply,
          socket
-         |> push_navigate(to: ~p"/rooms/#{room.slug}")}
+         |> push_navigate(to: ~p"/room/#{room.slug}")}
 
       {:error, changeset} ->
         {:noreply,
